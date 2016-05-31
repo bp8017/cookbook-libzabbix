@@ -5,7 +5,7 @@ action :create do
       Chef::Application.fatal! "Could not find a template named #{new_resource.template}"
     end
 
-    template_id = template_ids.first['hostid']
+    template_id = template_ids.first['templateid']
 
     method = 'discoveryrule.create'
     params = {}
