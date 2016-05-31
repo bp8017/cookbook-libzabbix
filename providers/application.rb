@@ -14,7 +14,7 @@ action :create do
         :method => 'application.create',
         :params => {
           :name => new_resource.name,
-          :templateid => template_ids.first['templateid']
+          :hostid => template_ids.first['templateid']
         }
       }
       connection.query(request)
