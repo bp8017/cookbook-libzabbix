@@ -96,7 +96,7 @@ class Chef
       class << self
         def find_hostgroup_ids(connection, hostgroup)
           group_id_request = {
-            :method => 'hostgroups.get',
+            :method => 'hostgroup.get',
             :params => {
               :filter => {
                 :name => hostgroup
@@ -108,7 +108,7 @@ class Chef
 
         def find_template_ids(connection, template)
           get_template_request = {
-            :method => 'templates.get',
+            :method => 'template.get',
             :params => {
               :filter => {
                 :host => template,
@@ -120,7 +120,7 @@ class Chef
 
         def find_application_ids(connection, application, template_id)
           request = {
-            :method => 'applications.get',
+            :method => 'application.get',
             :params => {
               :hostids => template_id,
               :filter => {
@@ -133,7 +133,7 @@ class Chef
 
         def find_lld_rule_ids(connection, template_id, key)
           request = {
-            :method => 'discoveryrules.get',
+            :method => 'discoveryrule.get',
             :params => {
               :templated => true,
               :templateids => template_id,
@@ -147,7 +147,7 @@ class Chef
 
         def find_trigger_ids(connection, description)
           request = {
-            :method => 'triggers.get',
+            :method => 'trigger.get',
             :params => {
               :search => {
                 :description => description
@@ -159,7 +159,7 @@ class Chef
 
         def find_trigger_prototype_ids(connection, description)
           request = {
-            :method => 'triggerprototypes.get',
+            :method => 'triggerprototype.get',
             :params => {
               :search => {
                 :description => description
@@ -171,7 +171,7 @@ class Chef
 
         def find_item_ids(connection, template_id, key, name = nil)
           request = {
-            :method => 'items.get',
+            :method => 'item.get',
             :params => {
               :hostids => template_id,
               :search => {
@@ -190,7 +190,7 @@ class Chef
 
         def find_item_prototype_ids(connection, template_id, key, discovery_rule_id = nil)
           request = {
-            :method => 'itemprototypes.get',
+            :method => 'itemprototype.get',
             :params => {
               :templateids => template_id,
               :search => {
@@ -206,7 +206,7 @@ class Chef
 
         def find_item_ids_on_host(connection, host, key)
           request = {
-            :method => 'items.get',
+            :method => 'item.get',
             :params => {
               :host => host,
               :search => {
@@ -219,7 +219,7 @@ class Chef
 
         def find_graph_ids(connection, name)
           request = {
-            :method => 'graphs.get',
+            :method => 'graph.get',
             :params => {
               :filter => {
                 :name => name
@@ -231,7 +231,7 @@ class Chef
 
         def find_graph_prototype_ids(connection, name)
           request = {
-            :method => 'graphprototypes.get',
+            :method => 'graphprototype.get',
             :params => {
               :filter => {
                 :name => name
